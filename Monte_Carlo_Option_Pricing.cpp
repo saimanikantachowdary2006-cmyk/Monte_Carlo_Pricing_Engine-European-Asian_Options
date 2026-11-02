@@ -35,7 +35,7 @@ int main(){
     std::cout<<"The option price is : "<<option_price<<std::endl;
     
     std::cout<<"The black scholes price :";
-    double d1 = (std::log(S0/K)+(r+((sigma*sigma)/2))*T)/sigma*std::sqrt(T);
+    double d1 = (std::log(S0/K) + (r + 0.5*sigma*sigma)*T) / (sigma*std::sqrt(T));
     double d2 = d1 - sigma*std::sqrt(T);
     double callprice = (S0*norm_cdf(d1)) - (K*std::exp(-r*T)*norm_cdf(d2));
     std::cout<<"The call price is : "<<callprice<<std::endl;
